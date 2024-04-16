@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+
+* {
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #dddddd;
+}
+
+.circles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  position: absolute;
+  top: 0.5%;
+  left: 1%;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: #ff5f57;
+}
+
+#circl2 {
+  background-color: #febc2e;
+}
+
+#circl3 {
+  background-color: #28c840;
+  grid-column: 3;
+}
+
+#calculator {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%); /* Center the calculator using translate */
+  width: 240px;
+  color: #ffffff;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+#cal-display {
+  background-color: #54535a;
+  line-height: 1.2em;
+  font-size: 2.5em;
+  text-align: right;
+  border-radius: 10px 10px 0 0; /* Top corners rounded only */
+  padding: 20px 15px 10px;
+}
+
+#cal-keypad {
+  border-radius: 0 0 10px 10px; /* Bottom corners rounded only */
+  border: 1px solid #262626;
+  overflow: hidden;
+}
+
+#cal-keypad button {
+  padding: 0;
+  font-size: 1.5em;
+  width: 60px;
+  height: 50px;
+  line-height: 50px;
+  color: #ffffff;
+  background: none;
+  border: none;
+  font-family: inherit;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.cal-keypad-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns for number keys */
+}
+
+.input-keys button {
+  border-top: 1px solid #262626;
+  border-left: 1px solid #262626;
+}
+
+.input-keys button:active {
+  background-color: #838383;
+}
+
+.operator-keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns for operators */
+}
+
+.operator button {
+  background-color: #fe9807;
+  border: 1px solid #262626;
+}
+
+.operator button:not(:last-child) {
+  border-bottom: 0;
+}
+
+.operator button span {
+  display: block;
+  height: 50px;
+  line-height: 48px;
+}
+
+.operator button.active > span {
+  border: 1px solid #000000;
+  border-bottom: 2px solid #000000;
+}
+
+.key-equal {
+  border-bottom-right-radius: 5px;
+  grid-column: span 3; 
+}
+
